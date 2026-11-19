@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mr. Ali Mahmoud | English Academy</title>
+
+<style>
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  color: white;
+  background: #080d20;
+  overflow-x: hidden;
+}
+
+.background {
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  background:
+    radial-gradient(circle at 15% 20%, #126b82, transparent 35%),
+    radial-gradient(circle at 85% 75%, #6335a0, transparent 40%),
+    linear-gradient(135deg,#070b1d,#14264d,#241238);
+  animation: colors 10s infinite alternate;
+}
+
+@keyframes colors {
+  from { filter: hue-rotate(0deg); }
+  to { filter: hue-rotate(55deg); }
+}
+
+header {
+  padding: 22px;
+  text-align: center;
+  background: rgba(0,0,0,.25);
+  border-bottom: 1px solid #ffffff22;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  backdrop-filter: blur(15px);
+}
+
+header h2 {
+  color: #8ff3e6;
+  letter-spacing: 2px;
+}
+
+nav {
+  margin-top: 15px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 18px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  transition: .3s;
+}
+
+nav a:hover {
+  color: #ffd477;
+}
+
+section {
+  padding: 65px 20px;
+  text-align: center;
+  scroll-margin-top: 110px;
+}
+
+.hero {
+  min-height: 85vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  width: 100%;
+  max-width: 850px;
+  padding: 45px 25px;
+  background: rgba(255,255,255,.09);
+  border: 1px solid #ffffff33;
+  border-radius: 30px;
+  backdrop-filter: blur(15px);
+  box-shadow: 0 20px 60px #0006;
+  animation: appear 1.5s ease;
+}
+
+@keyframes appear {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.book {
+  font-size: 70px;
+  margin-bottom: 15px;
+}
+
+h1 {
+  font-size: clamp(30px,7vw,55px);
+  margin: 15px 0;
+  background: linear-gradient(90deg,#fff,#75eee1,#c6a7ff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  direction: ltr;
+}
+
+h2 {
+  color: #ffd477;
+  margin-bottom: 20px;
+}
+
+p {
+  font-size: 19px;
+  line-height: 2;
+  color: #e3eaff;
+}
+
+.subtitle {
+  direction: ltr;
+  color: #8ff3e6;
+  font-weight: bold;
+  margin: 25px;
+  letter-spacing: 2px;
+}
+
+.button {
+  display: inline-block;
+  padding: 14px 28px;
+  margin: 10px;
+  border-radius: 40px;
+  text-decoration: none;
+  font-weight: bold;
+  color: #10172d;
+  background: linear-gradient(90deg,#8df2e5,#f6d27c);
+  transition: .3s;
+  border: none;
+  cursor: pointer;
+}
+
+.button:hover {
+  transform: translateY(-5px) scale(1.04);
+}
+
+.whatsapp {
+  background: #25d366;
+  color: white;
+}
+
+.features {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 30px;
+}
+
+.features span {
+  padding: 14px;
+  background: #ffffff18;
+  border: 1px solid #ffffff22;
+  border-radius: 15px;
+}
+
+.section-title {
+  font-size: 35px;
+  margin-bottom: 30px;
+  color: #8ff3e6;
+}
+
+.courses {
+  max-width: 1000px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
+  gap: 20px;
+}
+
+.course {
+  background: #ffffff12;
+  border: 1px solid #ffffff30;
+  border-radius: 20px;
+  padding: 30px 20px;
+  transition: .4s;
+}
+
+.course:hover {
+  transform: translateY(-10px);
+  background: #ffffff25;
+}
+
+.course .emoji {
+  font-size: 45px;
+  margin-bottom: 15px;
+}
+
+.form-box {
+  max-width: 550px;
+  margin: auto;
+  padding: 30px;
+  background: #ffffff12;
+  border: 1px solid #ffffff33;
+  border-radius: 25px;
+}
+
+input, select {
+  width: 100%;
+  padding: 15px;
+  margin: 10px 0;
+  border: 1px solid #ffffff44;
+  border-radius: 12px;
+  background: #101b36;
+  color: white;
+  font-size: 16px;
+  outline: none;
+}
+
+input:focus, select:focus {
+  border-color: #8df2e5;
+}
+
+select option {
+  background: #101b36;
+  color: white;
+}
+
+.form-box button {
+  width: 100%;
+  font-size: 17px;
+}
+
+footer {
+  padding: 35px 15px;
+  text-align: center;
+  background: #0005;
+  color: #bbc8e5;
+  line-height: 2;
+}
+
+.music-note {
+  position: fixed;
+  left: 15px;
+  bottom: 15px;
+  color: #8df2e5;
+  background: #10172d;
+  border: 1px solid #8df2e5;
+  padding: 10px 15px;
+  border-radius: 20px;
+  font-size: 13px;
+  z-index: 20;
+}
+
+@media(max-width:600px) {
+  nav { gap: 12px; }
+  nav a { font-size: 14px; }
+  section { padding: 45px 15px; }
+  .card { padding: 35px 18px; }
+}
+</style>
+</head>
+
+<body>
+
+<div class="background"></div>
+
+<header>
+  <h2>📚 ENGLISH WITH MR. ALI MAHMOUD</h2>
+
+  <nav>
+    <a href="#home">الرئيسية</a>
+    <a href="#courses">الكورسات</a>
+    <a href="#register">التسجيل</a>
+    <a href="#contact">تواصل معنا</a>
+  </nav>
+</header>
+
+<section class="hero" id="home">
+
+  <div class="card">
+
+    <div class="book">📚</div>
+
+    <h1>𝑴𝒓. 𝑨𝒍𝒊  𝑴𝒂𝒉𝒎𝒐𝒖𝒅</h1>
+
+    <h2>أهلاً وسهلاً بكل طالب وطالبة!</h2>
+
+    <p>
+      يسعدني أن أرحب بكل طالب يريد الانضمام إليّ
+      لتعلّم اللغة الإنجليزية.
+      <br>
+      معًا هنبدأ خطوة بخطوة، وهنطوّر مهاراتنا
+      في اللغة الإنجليزية بثقة ومتعة.
+    </p>
+
+    <div class="subtitle">
+      LEARN • PRACTICE • SUCCEED
+    </div>
+
+    <a href="#courses" class="button">
+      🚀 ابدأ رحلتك الآن
+    </a>
+
+    <a href="https://wa.me/201147118689"
+       class="button whatsapp"
+       target="_blank">
+      💬 تواصل عبر واتساب
+    </a>
+
+    <div class="features">
+      <span>✨ تعلم بطريقة سهلة</span>
+      <span>🎯 خطوة بخطوة</span>
+      <span>🚀 ثقة في الإنجليزي</span>
+    </div>
+
+  </div>
+
+</section>
+
+<section id="courses">
+
+  <h2 class="section-title">📚 الكورسات التعليمية</h2>
+
+  <div class="courses">
+
+    <div class="course">
+      <div class="emoji">🔤</div>
+      <h2>المستوى المبتدئ</h2>
+      <p>تعلم الحروف والكلمات والجمل الأساسية.</p>
+    </div>
+
+    <div class="course">
+      <div class="emoji">📝</div>
+      <h2>القواعد Grammar</h2>
+      <p>تعلم قواعد اللغة الإنجليزية بطريقة سهلة.</p>
+    </div>
+
+    <div class="course">
+      <div class="emoji">🗣️</div>
+      <h2>المحادثة Speaking</h2>
+      <p>طور مهارات التحدث والنطق.</p>
+    </div>
+
+    <div class="course">
+      <div class="emoji">📖</div>
+      <h2>القراءة والكتابة</h2>
+      <p>طور مهارات القراءة والكتابة خطوة بخطوة.</p>
+    </div>
+
+  </div>
+
+</section>
+
+<section id="register">
+
+  <h2 class="section-title">🎓 سجل معنا الآن</h2>
+
+  <div class="form-box">
+
+    <p>املأ بياناتك وابدأ رحلتك في تعلم الإنجليزية</p>
+
+    <form id="studentForm">
+
+      <input type="text"
+             id="studentName"
+             placeholder="اكتب اسم الطالب"
+             required>
+
+      <input type="tel"
+             id="studentPhone"
+             placeholder="رقم الهاتف"
+             required>
+
+      <select id="studentLevel" required>
+        <option value="">اختر المستوى التعليمي</option>
+        <option>مبتدئ</option>
+        <option>متوسط</option>
+        <option>متقدم</option>
+      </select>
+
+      <button type="submit" class="button">
+        ✅ إرسال طلب التسجيل
+      </button>
+
+    </form>
+
+  </div>
+
+</section>
+
+<section id="contact">
+
+  <h2 class="section-title">💬 تواصل مع Mr. Ali Mahmoud</h2>
+
+  <p>
+    لو عايز تتعلم الإنجليزي وتطور مستواك،
+    أنا في انتظارك!
+  </p>
+
+  <a href="https://wa.me/201147118689"
+     target="_blank"
+     class="button whatsapp">
+    تواصل معي على واتساب
+  </a>
+
+</section>
+
+<footer>
+
+  <h3>Welcome to English with Mr. Ali Mahmoud</h3>
+
+  <p>معًا نحو مستقبل أفضل باللغة الإنجليزية</p>
+
+  <p>جميع الحقوق محفوظة © Mr. Ali Mahmoud 2026</p>
+
+</footer>
+
+<div class="music-note" id="musicStatus">
+  🎵 موسيقى هادئة
+</div>
+
+<script>
+
+// التسجيل وإرسال البيانات إلى واتساب
+document.getElementById("studentForm")
+.addEventListener("submit", function(e) {
+
+  e.preventDefault();
+
+  const name =
+    document.getElementById("studentName").value.trim();
+
+  const phone =
+    document.getElementById("studentPhone").value.trim();
+
+  const level =
+    document.getElementById("studentLevel").value;
+
+  const message =
+    "السلام عليكم مستر علي" +
+    "\nأرغب في التسجيل في كورس الإنجليزي." +
+    "\nاسم الطالب: " + name +
+    "\nرقم الهاتف: " + phone +
+    "\nالمستوى: " + level;
+
+  const url =
+    "https://wa.me/201147118689?text=" +
+    encodeURIComponent(message);
+
+  window.open(url, "_blank");
+
+});
+
+
+// الموسيقى الهادئة
+let audioContext;
+let musicStarted = false;
+
+async function startMusic() {
+
+  if (musicStarted) return;
+
+  try {
+
+    const AudioContextClass =
+      window.AudioContext || window.webkitAudioContext;
+
+    if (!AudioContextClass) return;
+
+    if (!audioContext) {
+      audioContext = new AudioContextClass();
+    }
+
+    await audioContext.resume();
+
+    if (audioContext.state !== "running") return;
+
+    musicStarted = true;
+
+    const master = audioContext.createGain();
+
+    master.gain.value = 0.04;
+
+    master.connect(audioContext.destination);
+
+    const chords = [
+      [261.63,329.63,392.00],
+      [220.00,261.63,329.63],
+      [174.61,220.00,261.63],
+      [196.00,246.94,293.66]
+    ];
+
+    let index = 0;
+
+    function playChord() {
+
+      const notes = chords[index % chords.length];
+
+      index++;
+
+      notes.forEach(frequency => {
+
+        const oscillator =
+          audioContext.createOscillator();
+
+        const volume =
+          audioContext.createGain();
+
+        oscillator.type = "sine";
+
+        oscillator.frequency.value = frequency;
+
+        const now = audioContext.currentTime;
+
+        volume.gain.setValueAtTime(0, now);
+
+        volume.gain.linearRampToValueAtTime(
+          0.08, now + 1
+        );
+
+        volume.gain.linearRampToValueAtTime(
+          0, now + 4
+        );
+
+        oscillator.connect(volume);
+
+        volume.connect(master);
+
+        oscillator.start(now);
+
+        oscillator.stop(now + 4);
+
+      });
+
+    }
+
+    playChord();
+
+    setInterval(playChord, 4000);
+
+    document.getElementById("musicStatus").textContent =
+      "🎵 الموسيقى تعمل";
+
+  } catch(error) {
+
+    console.log("Music error:", error);
+
+  }
+
+}
+
+
+// محاولة التشغيل فور فتح الموقع
+window.addEventListener("load", startMusic);
+
+
+// لو المتصفح منع التشغيل تبدأ مع أول تفاعل
+["pointerdown", "touchstart", "keydown"].forEach(event => {
+
+  document.addEventListener(event, startMusic, {
+    once: true
+  });
+
+});
+
+</script>
+
+</body>
+  </html>
+  
